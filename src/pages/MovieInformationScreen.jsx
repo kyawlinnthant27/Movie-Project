@@ -19,15 +19,16 @@ const MovieInformationScreen = () => {
   if (isLoading)
     return <p className="h-full w-full absolute inset-0">Loading...</p>;
 
-  console.log(detail?.data?.credits?.cast?.map((item) => item.character));
-
   const goToProfile = (castId) => {
-    navigate(`/profile/${castId}`);
+    navigate(`/actors/${castId}`);
   };
 
   return (
-    <div className="flex bg-slate-50 justify-center items-center flex-col max-w-[300px] pt-20 h-auto">
-      <div key={detail?.data?.id} className="w-[200px] h-[100px] flex flex-col">
+    <div className="flex bg-slate-50 justify-center items-center flex-col justify-between">
+      <div
+        key={detail?.data?.id}
+        className="w-[200px] h-[100px] m-10 flex flex-col"
+      >
         <img
           src={`${base_url}${detail?.data?.backdrop_path}`}
           alt="cover"
@@ -40,14 +41,16 @@ const MovieInformationScreen = () => {
         <Link to="/">Close</Link>
       </div>
 
-      <div className="w-50 h-30 p-5">
+      <div className="p-5 flex flex-row scroll-m-1">
         {detail?.data?.credits?.cast?.map((item) => (
-          <img
-            onClick={() => goToProfile(item?.cast_id)}
-            src={`${base_url}${item?.profile_path}`}
-            alt="character"
-            className="w-full h-full object-contain hover:opacity-50 cursor-pointer"
-          />
+          <div key={item?.cast_id} className="my-10 w-[200px] h-[100px]">
+            <img
+              onClick={() => goToProfile(item?.id)}
+              src={`${base_url}${item?.profile_path}`}
+              alt="character"
+              className="w-full h-full object-cover hover:opacity-10 cursor-pointer"
+            />
+          </div>
         ))}
       </div>
     </div>

@@ -50,6 +50,7 @@ const getMovieByActor = async ({ id, page }) => {
   const response = await instance.get(
     `discover/movie?with_cast=${id}&page=${page}&api_key=${API_KEY}`
   );
+  return response;
 };
 
 export {
@@ -61,5 +62,6 @@ export {
   requests,
   getMovieDetail,
   instance,
+  getMovieByActor,
   getActor,
 };

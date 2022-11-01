@@ -18,7 +18,6 @@ const App = () => {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/movies/:id" element={<MovieInformationScreen />} />
         <Route path="/actors/:id" element={<ActorScreen />} />
-        <Route path="/profile/:id" element={<ProfileScreen />} />
       </Routes>
     </div>
   );
