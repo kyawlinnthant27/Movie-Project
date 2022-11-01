@@ -10,8 +10,6 @@ const Banner = () => {
     data: movies,
   } = useQuery(["originalMovies"], getBannerData);
 
-  console.log(movies);
-
   return <div>Banner</div>;
 };
 

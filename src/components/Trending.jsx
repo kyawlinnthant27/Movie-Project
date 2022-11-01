@@ -8,9 +8,9 @@ const Trending = () => {
     isLoading,
     isError,
     error,
-    data: trandingMovie,
+    data: trend,
   } = useQuery(["trending"], getTrending);
-  console.log("trending>>>", trandingMovie.data.results);
+  console.log("trending>>>", trend.data.results);
 
   return <MoviesCarousel />;
 };

@@ -34,6 +34,19 @@ const getDocumentary = async () => {
   return response;
 };
 
+const getMovieDetail = async (id) => {
+  const response = await instance.get(
+    `/movie/${id}?api_key=${API_KEY}&language=en-US`
+  );
+  return response;
+};
+
+const getMovieByActor = async ({ id, page }) => {
+  const response = await instance.get(
+    `discover/movie?with_cast=${id}&page=${page}&api_key=${API_KEY}`
+  );
+};
+
 export {
   getBannerData,
   getTopRated,
@@ -41,4 +54,6 @@ export {
   getDocumentary,
   base_url,
   requests,
+  getMovieDetail,
+  instance,
 };
