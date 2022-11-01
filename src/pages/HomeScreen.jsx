@@ -1,7 +1,14 @@
-import React from "react";
+import { Banner, Documentaries, TopRated, Trending } from "../components";
 
 const HomeScreen = () => {
-  return <div>HomeScreen</div>;
+  return (
+    <>
+      <Banner />
+      <TopRated />
+      <Trending />
+      <Documentaries />
+    </>
+  );
 };
 
 export default HomeScreen;

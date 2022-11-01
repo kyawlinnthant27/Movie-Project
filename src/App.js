@@ -2,9 +2,6 @@ import React, { useContext } from "react";
 import { useStateContext } from "./context/context";
 import { Routes, Route } from "react-router-dom";
 
-// components
-import TopRated from "./components/TopRated";
-
 // pages
 import {
   HomeScreen,
@@ -12,8 +9,6 @@ import {
   MovieInformationScreen,
   ProfileScreen,
 } from "./pages";
-// utils
-import requests from "./utils/Request";
 
 const App = () => {
   const { initialState } = useStateContext();
