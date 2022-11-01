@@ -36,8 +36,13 @@ const getDocumentary = async () => {
 
 const getMovieDetail = async (id) => {
   const response = await instance.get(
-    `/movie/${id}?api_key=${API_KEY}&language=en-US`
+    `/movie/${id}?append_to_response=videos,credits&api_key=${API_KEY}&language=en-US`
   );
+  return response;
+};
+
+const getActor = async (castId) => {
+  const response = await instance.get(`person/${castId}?api_key=${API_KEY}`);
   return response;
 };
 
@@ -56,4 +61,5 @@ export {
   requests,
   getMovieDetail,
   instance,
+  getActor,
 };

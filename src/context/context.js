@@ -3,7 +3,7 @@ import React, { useContext, createContext, useState } from "react";
 const StateContext = createContext();
 
 const initialState = {
-  user: "jhon",
+  popUp: false,
 };
 
 export const ContextProvider = ({ children }) => {
