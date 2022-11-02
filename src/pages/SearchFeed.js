@@ -17,7 +17,6 @@ const SearchFeed = () => {
     };
     fetchData();
   }, [searchTerm]);
-  console.log(movies);
 
   return (
     <div>
