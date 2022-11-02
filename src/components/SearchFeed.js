@@ -15,13 +15,11 @@ const SearchFeed = () => {
     );
   });
 
-  return (
-    <SearchBar
-      onSubmit={async (value) => {
-        await mutate(value);
-      }}
-    />
-  );
+  const onSubmit = async (value) => {
+    return await mutate(value);
+  };
+
+  return <SearchBar onSubmit={onSubmit} />;
 };
 
 export default SearchFeed;

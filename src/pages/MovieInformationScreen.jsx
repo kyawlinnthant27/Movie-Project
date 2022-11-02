@@ -28,13 +28,13 @@ const MovieInformationScreen = () => {
       const trailers = videosList.filter(
         ({ type, official }) => type.toLowerCase() === "trailer" && official
       );
+      console.log(trailers);
       return trailers.length > 0 ? trailers.at(-1).key : videosList.at(-1).key;
     }
     return null;
   };
 
   const trailerKey = getMovieTrailerVideoKey(detail?.data?.videos?.results);
-  console.log(trailerKey);
 
   return (
     <div className="flex bg-slate-50 justify-center items-center flex-col justify-between">
@@ -69,6 +69,7 @@ const MovieInformationScreen = () => {
       {trailerKey && (
         <iframe
           autoPlay
+          className="w-[90rem] h-[200px]"
           title="Trailer"
           src={`https://www.youtube.com/embed/${trailerKey}`}
           allow="autoplay"

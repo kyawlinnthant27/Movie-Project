@@ -55,7 +55,7 @@ const getMovieByActor = async ({ id, page }) => {
 
 const searchMovie = async ({ searchQuery, page }) => {
   const response = await instance.get(
-    `/search/movie?query=${searchQuery}&page=${page}&api_key=${API_KEY}`
+    `/search/movie?query=${searchQuery}&page=${page}&api_key=${API_KEY}&language=en-US`
   );
   return response;
 };

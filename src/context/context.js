@@ -4,7 +4,7 @@ const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [page, setPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState("news");
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <StateContext.Provider

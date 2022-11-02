@@ -1,9 +1,10 @@
-import { Banner, Documentaries, TopRated, SearchBar } from "../components";
+import { Banner, Documentaries, TopRated } from "../components";
+import SearchFeed from "./SearchFeed";
 
 const HomeScreen = () => {
   return (
     <div className="w-full h-full bg-gray-500">
-      <SearchBar />
+      <SearchFeed />
       <div className="">
         <Banner />
         <TopRated />
