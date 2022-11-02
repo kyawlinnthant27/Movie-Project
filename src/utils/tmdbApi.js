@@ -53,6 +53,13 @@ const getMovieByActor = async ({ id, page }) => {
   return response;
 };
 
+const searchMovie = async ({ searchQuery, page }) => {
+  const response = await instance.get(
+    `/search/movie?query=${searchQuery}&page=${page}&api_key=${API_KEY}`
+  );
+  return response;
+};
+
 export {
   getBannerData,
   getTopRated,
@@ -64,4 +71,5 @@ export {
   instance,
   getMovieByActor,
   getActor,
+  searchMovie,
 };

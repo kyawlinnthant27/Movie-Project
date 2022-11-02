@@ -23,6 +23,19 @@ const MovieInformationScreen = () => {
     navigate(`/actors/${castId}`);
   };
 
+  const getMovieTrailerVideoKey = (videosList) => {
+    if (videosList && videosList.length > 0) {
+      const trailers = videosList.filter(
+        ({ type, official }) => type.toLowerCase() === "trailer" && official
+      );
+      return trailers.length > 0 ? trailers.at(-1).key : videosList.at(-1).key;
+    }
+    return null;
+  };
+
+  const trailerKey = getMovieTrailerVideoKey(detail?.data?.videos?.results);
+  console.log(trailerKey);
+
   return (
     <div className="flex bg-slate-50 justify-center items-center flex-col justify-between">
       <div
@@ -53,6 +66,14 @@ const MovieInformationScreen = () => {
           </div>
         ))}
       </div>
+      {trailerKey && (
+        <iframe
+          autoPlay
+          title="Trailer"
+          src={`https://www.youtube.com/embed/${trailerKey}`}
+          allow="autoplay"
+        />
+      )}
     </div>
   );
 };

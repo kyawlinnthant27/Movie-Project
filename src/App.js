@@ -1,23 +1,19 @@
-import React, { useContext } from "react";
-import { useStateContext } from "./context/context";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // pages
-import {
-  HomeScreen,
-  ActorScreen,
-  MovieInformationScreen,
-  ProfileScreen,
-} from "./pages";
+import { HomeScreen, ActorScreen, MovieInformationScreen } from "./pages";
+import { SearchFeed } from "./components";
+// context
 
 const App = () => {
-  const { initialState } = useStateContext();
   return (
     <div>
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/movies/:id" element={<MovieInformationScreen />} />
         <Route path="/actors/:id" element={<ActorScreen />} />
+        <Route path="/search/:searchTerm" element={<SearchFeed />} />
       </Routes>
     </div>
   );

@@ -2,15 +2,14 @@ import React, { useContext, createContext, useState } from "react";
 
 const StateContext = createContext();
 
-const initialState = {
-  popUp: false,
-};
-
 export const ContextProvider = ({ children }) => {
-  const [user, setUser] = useState(initialState.user);
+  const [page, setPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("news");
 
   return (
-    <StateContext.Provider value={{ user, setUser, initialState }}>
+    <StateContext.Provider
+      value={{ searchQuery, setSearchQuery, page, setPage }}
+    >
       {children}
     </StateContext.Provider>
   );

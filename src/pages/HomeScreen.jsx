@@ -1,12 +1,15 @@
-import { Banner, Documentaries, TopRated, Trending } from "../components";
+import { Banner, Documentaries, TopRated, SearchBar } from "../components";
 
 const HomeScreen = () => {
   return (
     <div className="w-full h-full bg-gray-500">
-      <Banner />
-      <TopRated />
-      {/* <Trending /> */}
-      {/* <Documentaries /> */}
+      <SearchBar />
+      <div className="">
+        <Banner />
+        <TopRated />
+        {/* <Trending /> */}
+        {/* <Documentaries /> */}
+      </div>
     </div>
   );
 };

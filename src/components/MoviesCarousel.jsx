@@ -14,7 +14,7 @@ const MoviesCarousel = ({ data, error, loading }) => {
   return (
     <div className="">
       {data?.map((movie) => (
-        <div className="w-[500px] h-[500px]">
+        <div className="w-[500px] h-[500px]" key={movie.id}>
           <h1
             className="font-3xl font-bold cursor-pointer hover:bg-green-50"
             onClick={() => handleClick(movie.id)}
